@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-	<title>ALL CARS</title>
-	<style>
-		div.container{
-				text-align: right;
-			     }
-	</style>
+{% block content %} 
+ <table>
+   <tr>
+	<th>Carid</th>
+	<th>Car Brand</th>
+	<th>Car Model</th>
+   </tr>
+   {% for car in myUser %}
+      <tr>
+	 <td>{{ car.carid }}</td>
+         <td>{{ car.carbrand }}</td>
+	 <td>{{ car.carmodel }}</td>
+	 <td><a href="edit/{{car.carid}}">Edit</a></td>
+     </tr>
+   {% endfor %}
+ </table>
+{% endblock %}
 
-</head>
-<body>
-	<div class="container">
-	    <form role="form" action="add.html">
-	      <div class="header">
-		 <button type="button" onclick="document.location.href='add.html'">+Add New Car
-	      </div>
-	    </form>
-	    <br>
-	    {% for carvar in carvars %}
-	       <h4>{{ carvar }}</h4>
-	    {% endfor %}
-	</div>
-</body>
-</html>
+ 

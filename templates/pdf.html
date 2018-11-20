@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CAR</title>
+</head>
+<body>
+     <embed src="/home/microblog/app/templates/write.txt" width="100%" height="200"></embed>
+     <div>ALL CARS</div>
+     <table>
+         <tr>
+	    <th>Carid</th>
+	    <th>Car Brand</th>
+	    <th>Car Model</th>
+         </tr>
+         {% for car in myCars %}
+         <tr>
+	    <td>{{ car.carid }}</td>
+            <td>{{ car.carbrand }}</td>
+	    <td>{{ car.carmodel }}</td>
+         </tr>
+         {% endfor %}
+     </table>
+</body>
+</html>
+
